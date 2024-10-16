@@ -1,0 +1,26 @@
+{
+  "name": "bullmq-dashboard",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "server": "nodemon app.js"
+  },
+  "keywords": [
+    "bullmq",
+    "dashboard",
+    "bull",
+    "bullmq-dashboard",
+    "bullmq-dashboard",
+    "bullmq-dashboard",
+    "bullmq-dashboard"
+  ],
+  "author": "Rutwek Hirwe",
+  "license": "ISC",
+  "description": "BullMQ Dashboard",
+  "dependencies": {
+    "express": "^4.18.2",
+    "@bull-board/api": "^5.8.0",
+    "@bull-board/express": "^5.8.0",
+    "bull": "^4.11.3"
+  }
+}
