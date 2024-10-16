@@ -2,8 +2,14 @@ const express = require('express');
 const { createBullBoard } = require('@bull-board/api');
 const { BullAdapter } = require('@bull-board/api/bullAdapter');
 const { ExpressAdapter } = require('@bull-board/express');
-const Queue = require('bull');
+const {Queue} = require('bullmq');
 const basePath = process.env.BASE_PATH || '/admin/queues';
+const redisConfig = {
+  host: process.env.REDIS_HOST || '127.0.0.1',
+  port: process.env.REDIS_PORT || 6379,
+  password: process.env.REDIS_PASSWORD || '',
+  db: process.env.REDIS_DB || 0,
+};
 
 const app = express();
 
@@ -63,12 +69,14 @@ function initBullBoard(){
 }
 
 /**
- * @usage: To initialize queues
+ * @usage: To initialize queues with a custom Redis connection
  */
 function initQueues() {
   const queues = process.env.QUEUES || [];
   global.queues = {};
   for (let q of queues) {
-    global.queues[q] = new Queue(q);
+    global.queues[q] = new Queue(q, {
+      connection: redisConfig
+    });
   }
 }
