@@ -72,7 +72,7 @@ function initBullBoard(){
  * @usage: To initialize queues with a custom Redis connection
  */
 function initQueues() {
-  const queues = process.env.QUEUES || [];
+  let queues = typeof process.env.QUEUES == 'string'? process.env.QUEUES.split(',') : process.env.QUEUES || [];
   global.queues = {};
   for (let q of queues) {
     global.queues[q] = new Queue(q, {
