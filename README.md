@@ -1,15 +1,15 @@
-# bullmq-dashboard
+# bullmq-dashboard 🌟
 
-## Description
+## Description 📝
 bullmq-dashboard is a web application that provides a user interface for managing BullMQ queues. It allows you to monitor and manage your queues easily through a web interface, making it simpler to visualize the state of your jobs and queues.
 
-## Author
+## Author 👤
 Rutwek Hirwe
 
-## Usage
+## Usage ⚙️
 To run the application, you need to build the Docker image and then run the container with the appropriate environment variables. The application will expose a web interface for managing BullMQ queues.
 
-## Run Command
+## Run Command 🚀
 To run the application, use the following command:
 
 ```bash
@@ -25,7 +25,7 @@ docker run -d \
 bullmq-dashboard:latest
 ```
 
-## Environment Variables
+## Environment Variables 🌍
 The following environment variables are expected while running the container:
 
 - `BASE_PATH`: The base path for the Bull Board interface (default: `/admin/queues`).
@@ -35,5 +35,5 @@ The following environment variables are expected while running the container:
 - `REDIS_DB`: The Redis database number to use (default: `0`).
 - `QUEUES`: A comma-separated list of queue names to initialize.
 
-## Accessing the Dashboard
+## Accessing the Dashboard 📊
 Once the container is running, you can access the BullMQ dashboard at `http://localhost:your-port/your-base-path`.
